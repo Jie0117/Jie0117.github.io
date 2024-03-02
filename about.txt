@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Anuphan
+- Font Author: Copyright 2019 The Anuphan Project Authors (https://github.com/cadsondemak/Anuphan)
+- Font Source: https://fonts.gstatic.com/s/anuphan/v3/2sDBZGxYgY7LkLT0s2Yrm5UhuLoIZCkY9Q4kGmW927Gu.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
