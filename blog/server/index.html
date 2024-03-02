@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh" class="m-auto dark"><head>
+<html lang="zh" class="m-auto dark"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <title>Jie&#39;s Blog</title>
 
 <meta name="theme-color" content="" />
@@ -29,9 +29,7 @@
 
 
 
-
-
-<link href="/main.min.61bc0e539dfa0882812c3a6a1b9daa080a3a813eb6114a563ac9914192b7f664.css" rel="stylesheet" />
+<link href="/main.css" rel="stylesheet" />
 
 
   
@@ -82,7 +80,7 @@
   class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-300 dark:border-gray-700 justify-between"
 >
   <div>
-    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="https://jie0117.github.io/">Home</a>    
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="http://localhost:1313/">Home</a>    
     <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="/blog">Blog</a>
   </div>
   
@@ -117,6 +115,8 @@
   <p class="mb-1">March 2, 2024</p>
   <p>&mdash;</p>
 </div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.min.css">
 <div class="content">
   <h1 id="正向代理-vs-反向代理">正向代理 vs. 反向代理</h1>
 <p>當談到網路和網路服務時，&ldquo;正向代理&rdquo;（Forward Proxy）和&quot;反向代理&quot;（Reverse Proxy）是兩個常被提及的概念。這兩種代理伺服器（Proxy Server）都是在網路通訊中發揮重要作用的工具，但它們的功能和工作方式卻大不相同。對於一般使用者比較常接觸到的是正向代理(如：VPN)，而反向代理則是網站架設者會接觸到的。
@@ -169,7 +169,12 @@ B --&gt;|Return Response| A
 <li>緩存：可以緩存靜態資源，提高資源的訪問速度和效率。</li>
 </ul>
 
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.min.js"></script>
+  <script>
+      mermaid.initialize({startOnLoad:true});
+  </script>
 </div>
+
 </div>
 <div class="flex flex-row justify-around my-2">
   <h3 class="mb-1 mt-1 text-left mr-4">
