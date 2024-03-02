@@ -6,8 +6,15 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 02 Mar 2024 11:37:36 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 02 Mar 2024 17:05:55 +0800</lastBuildDate>
     <atom:link href="https://jie0117.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 6.Zigzag Conversion</title>
+      <link>https://jie0117.github.io/blog/leetcode_6_zigzag_conversion/</link>
+      <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
+      <guid>https://jie0117.github.io/blog/leetcode_6_zigzag_conversion/</guid>
+      <description>題目敘述 字串 &amp;quot;PAYPALISHIRING&amp;quot; 按照給定的行數以鋸齒形模式編寫，就像這樣： （為了更好的可讀性，你可以這樣閱讀）&#xA;P A H N A P L S I I G Y I R&#xA;之後依照行順序讀取: &amp;quot;PAHNAPLSIIGYIR&amp;quot;&#xA;函數總共會有兩個參數字串s跟整數numRows&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 3 Output: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;&#xA;Example 2:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 4 Output: &amp;ldquo;PINALSIGYAHRPI&amp;rdquo; Explanation: P I N A L S I G Y A H R P I&#xA;Example 3:&#xA;Input: s = &amp;ldquo;A&amp;rdquo;, numRows = 1 Output: &amp;ldquo;A&amp;rdquo;</description>
+    </item>
     <item>
       <title>Server Proxy</title>
       <link>https://jie0117.github.io/blog/server/</link>

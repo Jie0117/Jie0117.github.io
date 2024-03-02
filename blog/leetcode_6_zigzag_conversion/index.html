@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh" class="m-auto dark"><head>
+  <title>Jie&#39;s Blog</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="Website title" />
+<meta name="author" content="Jie Chen" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.123.6" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+
+
+
+
+
+<link href="/main.min.61bc0e539dfa0882812c3a6a1b9daa080a3a813eb6114a563ac9914192b7f664.css" rel="stylesheet" />
+
+
+  
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+    if (theme) {
+      theme === "dark"
+        ? html.classList.add("dark")
+        : html.classList.remove("dark");
+    } else if (html.classList.contains("dark")) {
+      window.localStorage.setItem("theme", "dark");
+    } else {
+      html.classList.remove("dark");
+      window.localStorage.setItem("theme", "light");
+    }
+
+    window.onload = () => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (window.localStorage.getItem("theme") === "dark") {
+        themeToggle.classList.remove("bi-moon-fill");
+        themeToggle.classList.add("bi-brightness-high");
+      } else {
+        themeToggle.classList.add("bi-moon-fill");
+        themeToggle.classList.remove("bi-brightness-high");
+      }
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-300 dark:border-gray-700 justify-between"
+>
+  <div>
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="https://jie0117.github.io/">Home</a>    
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="/blog">Blog</a>
+  </div>
+  
+  <i
+    class="fas fa-sun theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
+    onclick="lightDark(this)"
+  ></i>
+</header>
+
+<script>
+  const lightDark = (el) => {
+    let html = document.querySelector("html");
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      el.classList.add("fa-moon");
+      el.classList.remove("fa-sun");
+      window.localStorage.setItem("theme", "light");
+    } else {
+      html.classList.add("dark");
+      el.classList.add("fa-sun");
+      el.classList.remove("fa-moon");
+      window.localStorage.setItem("theme", "dark");
+    }
+  };
+</script>
+
+    
+    <main class="grow">
+<div class="prose prose-stone dark:prose-invert max-w-none">
+<div class="mb-3">
+  <h1 class="top-h1" style="font-size: 2.75em">Leetcode 6.Zigzag Conversion</h1>
+  <p class="mb-1">March 2, 2024</p>
+  <p>&mdash;</p>
+</div>
+
+<div class="content">
+  
+  <h1 id="題目敘述">題目敘述</h1>
+<p>字串 <code>&quot;PAYPALISHIRING&quot;</code> 按照給定的行數以鋸齒形模式編寫，就像這樣：
+（為了更好的可讀性，你可以這樣閱讀）</p>
+<p>P   A   H   N
+A P L S I I G
+Y   I   R</p>
+<p>之後依照行順序讀取:  <code>&quot;PAHNAPLSIIGYIR&quot;</code></p>
+<p>函數總共會有兩個參數字串s跟整數numRows</p>
+<p>string convert(string s, int numRows);</p>
+<h1 id="測試資料">測試資料</h1>
+<p><strong>Example 1:</strong></p>
+<p><strong>Input:</strong> s = &ldquo;PAYPALISHIRING&rdquo;, numRows = 3
+<strong>Output:</strong> &ldquo;PAHNAPLSIIGYIR&rdquo;</p>
+<p><strong>Example 2:</strong></p>
+<p><strong>Input:</strong> s = &ldquo;PAYPALISHIRING&rdquo;, numRows = 4
+<strong>Output:</strong> &ldquo;PINALSIGYAHRPI&rdquo;
+<strong>Explanation:</strong>
+P     I    N
+A   L S  I G
+Y A   H R
+P     I</p>
+<p><strong>Example 3:</strong></p>
+<p><strong>Input:</strong> s = &ldquo;A&rdquo;, numRows = 1
+<strong>Output:</strong> &ldquo;A&rdquo;</p>
+<h1 id="限制條件">限制條件</h1>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code>  consists of English letters (lower-case and upper-case),  <code>','</code>  and  <code>'.'</code>.</li>
+<li><code>1 &lt;= numRows &lt;= 1000</code></li>
+</ul>
+<h1 id="想法">想法</h1>
+<p>建立一個index變數，並且限制此變數只會在0~numRows-1(因為是陣列的關係)之間來回移動。
+如果目前在numRows[0]，碰到上界，表示我要往遞增的方向走，到numRows[1]
+如果目前在numRows[numRows-1]，碰到下界，表示我要往遞減的方向走，到numRows[numRows-2]
+time complex: O(n)</p>
+<h1 id="code">code</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span>string  <span style="color:#a6e22e">convert</span>(string  s, <span style="color:#66d9ef">int</span>  numRows)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	std<span style="color:#f92672">::</span>vector<span style="color:#f92672">&lt;</span>std<span style="color:#f92672">::</span>string<span style="color:#f92672">&gt;</span> rows(numRows);
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (numRows <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">||</span> numRows <span style="color:#f92672">&gt;=</span> s.length()) 
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> s;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, step <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">char</span> c : s)
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		rows[index] <span style="color:#f92672">+=</span> c;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (index <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			step <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>  <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">==</span> numRows <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			step <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		index <span style="color:#f92672">+=</span> step;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	std<span style="color:#f92672">::</span>string result;
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">const</span>  std<span style="color:#f92672">::</span>string <span style="color:#f92672">&amp;</span>row : rows) 
+</span></span><span style="display:flex;"><span>	{
+</span></span><span style="display:flex;"><span>		result <span style="color:#f92672">+=</span> row;
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> result;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+  <script src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+  
+  <script>
+        Array.from(document.getElementsByClassName('language-mermaid')).forEach(el => {
+        el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`
+    })
+</script>
+
+</div>
+
+</div>
+<div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/server/"
+      title="Server Proxy"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="text-gray-300 dark:text-gray-600 fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class="text-sm text-center border-t border-gray-300 dark:border-gray-700  py-6 ">
+  <p class="markdownify"></p>
+  <p >
+    <i>
+      <a href="https://github.com/jie0117">
+        Github
+      </a>
+    </i>
+  </p>
+</footer>
+
+    
+  </body>
+</html>
