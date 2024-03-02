@@ -169,10 +169,12 @@ B --&gt;|Return Response| A
 <li>緩存：可以緩存靜態資源，提高資源的訪問速度和效率。</li>
 </ul>
 
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.min.js"></script>
+  <script src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
   <script>
-      mermaid.initialize({startOnLoad:true});
-  </script>
+        Array.from(document.getElementsByClassName('language-mermaid')).forEach(el => {
+        el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`
+    })
+</script>
 </div>
 
 </div>
