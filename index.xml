@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:1313/</link>
+    <link>https://jie0117.github.io/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Sat, 02 Mar 2024 11:37:36 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jie0117.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Server Proxy</title>
-      <link>http://localhost:1313/blog/server/</link>
+      <link>https://jie0117.github.io/blog/server/</link>
       <pubDate>Sat, 02 Mar 2024 11:37:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/server/</guid>
+      <guid>https://jie0117.github.io/blog/server/</guid>
       <description>正向代理 vs. 反向代理 當談到網路和網路服務時，&amp;ldquo;正向代理&amp;rdquo;（Forward Proxy）和&amp;quot;反向代理&amp;quot;（Reverse Proxy）是兩個常被提及的概念。這兩種代理伺服器（Proxy Server）都是在網路通訊中發揮重要作用的工具，但它們的功能和工作方式卻大不相同。對於一般使用者比較常接觸到的是正向代理(如：VPN)，而反向代理則是網站架設者會接觸到的。 接下來就讓我們來看看兩者之間的差異！&#xA;正向代理（Forward Proxy） 讓我們先從&amp;quot;正向代理&amp;quot;開始說起。正向代理通常是作為客戶端（client）與公共網路（Internet）之間的一個中間媒介。當用戶端設備（例如個人電腦、手機等）要求訪問網路上的資源時，它會先向正向代理伺服器發送請求。代理伺服器會代表客戶端向目標伺服器（例如網站、服務器等）發出請求，並將其回應返回給客戶端。簡單來說，正向代理&amp;quot;代表&amp;quot;客戶端去訪問網絡上的資源，並將收到的資源回傳給客戶端。&#xA;graph LR; ClientSideA ---|&amp;lt;-Response, Request-&amp;gt;| ForwardProxy; ClientSideB ---|&amp;lt;-Response, Request-&amp;gt;| ForwardProxy; ForwardProxy --&amp;gt;|Forward Request| TargetServer; TargetServer --&amp;gt;|Response| ForwardProxy; 客戶端（Client Side） 發送一個請求（Request）到正向代理（Forward Proxy）。 正向代理 接收到這個請求後，會代表客戶端向目標伺服器（Target Server）發送另一個請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給正向代理。 正向代理 收到來自目標伺服器的回應後，再將這個回應轉發給最初的客戶端。 簡而言之，正向代理的流程是客戶端通過正向代理來訪問目標伺服器(也就是說可以對目標伺服器隱藏身分)，並將目標伺服器的回應返回給客戶端。這種代理方式通常用於控制、過濾或監視用戶端的request，也可以用於繞過某些網路限制(如：翻牆)。&#xA;反向代理（Reverse Proxy） 相反，&amp;ldquo;反向代理&amp;quot;則在伺服器端（server-side）扮演著類似的角色，但其工作方式則截然不同。當客戶端向伺服器發送請求時，這個請求會先傳送到反向代理伺服器。反向代理伺服器會根據特定的規則和配置，將這個請求轉發到適當的後端伺服器（如應用伺服器、資料庫伺服器等）。當後端伺服器返回結果時，反向代理伺服器再將這些結果轉發給最初的客戶端。簡而言之，反向代理伺服器&amp;quot;代表&amp;quot;伺服器來處理客戶端的請求，並將結果返回給客戶端。&#xA;graph LR A[ClientSide] --&amp;gt;|Request| B(Reverse Proxy) B --&amp;gt;|Allocation Request| C{server} B --&amp;gt;|Allocation Request| D{server} C{server} --&amp;gt;|Response| B D{server} --&amp;gt;|Response| B B --&amp;gt;|Return Response| A 客戶端（Client Side） 發送一個請求（Request）到反向代理（Reverse Proxy）。注意：以客戶端視角是不知道反向代理伺服器的存在。 反向代理 接收到這個請求後，會代表根據自定義規則向伺服器（Server）分配請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給反向代理。 反向代理 收到來自伺服器的回應後，再將這個回應轉發給最初的客戶端。 總體而言，反向代理在客戶端和目標伺服器之間充當了中間人的角色，但與正向代理不同的是，反向代理是代表伺服器而不是客戶端。它隱藏了後端伺服器的真實身份和結構，並可以提供負載平衡、SSL 加密、緩存等功能，以增強伺服器的效率、安全性和可擴展性。</description>
     </item>
   </channel>
