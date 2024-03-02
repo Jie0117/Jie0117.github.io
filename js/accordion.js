@@ -1,3 +1,4 @@
+
 const allPanels = Array.from(document.querySelectorAll(".panel"));
 const allAccordion = Array.from(document.querySelectorAll(".accordion"));
 const expandAccordion = (elem) => {

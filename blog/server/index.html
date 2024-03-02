@@ -31,7 +31,7 @@
 
 
 
-<link href="/main.min.61bc0e539dfa0882812c3a6a1b9daa080a3a813eb6114a563ac9914192b7f664.css" rel="stylesheet" />
+<link href="/main.min.1acbcbeccdb1f08a4ce70cdcbc407c76840c0eb51b7488432a126b01e280c9c2.css" rel="stylesheet" />
 
 
   
@@ -118,19 +118,15 @@
   <p>&mdash;</p>
 </div>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mermaid@10.0.0/dist/mermaid.min.css">
 <div class="content">
+  
   <h1 id="正向代理-vs-反向代理">正向代理 vs. 反向代理</h1>
 <p>當談到網路和網路服務時，&ldquo;正向代理&rdquo;（Forward Proxy）和&quot;反向代理&quot;（Reverse Proxy）是兩個常被提及的概念。這兩種代理伺服器（Proxy Server）都是在網路通訊中發揮重要作用的工具，但它們的功能和工作方式卻大不相同。對於一般使用者比較常接觸到的是正向代理(如：VPN)，而反向代理則是網站架設者會接觸到的。
 接下來就讓我們來看看兩者之間的差異！</p>
 <h2 id="正向代理forward-proxy">正向代理（Forward Proxy）</h2>
 <p>讓我們先從&quot;正向代理&quot;開始說起。正向代理通常是作為客戶端（client）與公共網路（Internet）之間的一個中間媒介。當用戶端設備（例如個人電腦、手機等）要求訪問網路上的資源時，它會先向正向代理伺服器發送請求。代理伺服器會代表客戶端向目標伺服器（例如網站、服務器等）發出請求，並將其回應返回給客戶端。簡單來說，正向代理&quot;代表&quot;客戶端去訪問網絡上的資源，並將收到的資源回傳給客戶端。</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR; 
-ClientSideA ---|&lt;-Response, Request-&gt;| ForwardProxy; 
-ClientSideB ---|&lt;-Response, Request-&gt;| ForwardProxy;
-ForwardProxy --&gt;|Forward Request| TargetServer; 
-TargetServer --&gt;|Response| ForwardProxy; 
-</code></pre><ol>
+<p><img src="/images/mermaid-diagram-2024-03-02-1.svg" alt="one"></p>
+<ol>
 <li><strong>客戶端（Client Side）</strong> 發送一個請求（Request）到正向代理（Forward Proxy）。</li>
 <li><strong>正向代理</strong> 接收到這個請求後，會代表客戶端向目標伺服器（Target Server）發送另一個請求。</li>
 <li><strong>目標伺服器</strong> 收到請求後，處理並返回一個回應（Response）給正向代理。</li>
@@ -139,14 +135,10 @@ TargetServer --&gt;|Response| ForwardProxy;
 <p>簡而言之，正向代理的流程是客戶端通過正向代理來訪問目標伺服器(也就是說可以對目標伺服器隱藏身分)，並將目標伺服器的回應返回給客戶端。這種代理方式通常用於控制、過濾或監視用戶端的request，也可以用於繞過某些網路限制(如：翻牆)。</p>
 <h2 id="反向代理reverse-proxy">反向代理（Reverse Proxy）</h2>
 <p>相反，&ldquo;反向代理&quot;則在伺服器端（server-side）扮演著類似的角色，但其工作方式則截然不同。當客戶端向伺服器發送請求時，這個請求會先傳送到反向代理伺服器。反向代理伺服器會根據特定的規則和配置，將這個請求轉發到適當的後端伺服器（如應用伺服器、資料庫伺服器等）。當後端伺服器返回結果時，反向代理伺服器再將這些結果轉發給最初的客戶端。簡而言之，反向代理伺服器&quot;代表&quot;伺服器來處理客戶端的請求，並將結果返回給客戶端。</p>
-<pre tabindex="0"><code class="language-mermaid" data-lang="mermaid">graph LR
-A[ClientSide] --&gt;|Request| B(Reverse Proxy)
-B --&gt;|Allocation Request| C{server}
-B --&gt;|Allocation Request| D{server}
-C{server} --&gt;|Response| B
-D{server} --&gt;|Response| B
-B --&gt;|Return Response| A
-</code></pre><ol>
+<p><img src="/images/mermaid-diagram-2024-03-02-2.svg" alt="one"></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ol>
 <li><strong>客戶端（Client Side）</strong> 發送一個請求（Request）到反向代理（Reverse Proxy）。注意：以客戶端視角是不知道反向代理伺服器的存在。</li>
 <li><strong>反向代理</strong> 接收到這個請求後，會代表根據自定義規則向伺服器（Server）分配請求。</li>
 <li><strong>目標伺服器</strong> 收到請求後，處理並返回一個回應（Response）給反向代理。</li>
@@ -172,11 +164,13 @@ B --&gt;|Return Response| A
 </ul>
 
   <script src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+  
   <script>
         Array.from(document.getElementsByClassName('language-mermaid')).forEach(el => {
         el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`
     })
 </script>
+
 </div>
 
 </div>
