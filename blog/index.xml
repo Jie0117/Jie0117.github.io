@@ -6,8 +6,15 @@
     <description>Recent content in Jie Blog on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sun, 03 Mar 2024 16:15:55 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 17:55:56 +0800</lastBuildDate>
     <atom:link href="https://jie0117.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>x86,x64,AMD64,ARM64傻傻分不清？</title>
+      <link>https://jie0117.github.io/blog/isa/</link>
+      <pubDate>Sun, 03 Mar 2024 17:55:56 +0800</pubDate>
+      <guid>https://jie0117.github.io/blog/isa/</guid>
+      <description>前言 在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。&#xA;因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！&#xA;ARM64 ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。&#xA;ARM架構一直以來都在行動裝置市場上佔有主導地位，其低功耗和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。&#xA;ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。&#xA;x86, x64, AMD64 x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳&#xA;總結： Intel及AMD採用&#xA;x64 = 32位元指令集 x86, AMD64 = 64位元指令集(可向下相容32位元) Nvidia、Qualcomm 、Samsung、Apple採用&#xA;ARM架構 </description>
+    </item>
     <item>
       <title>Leetcode 19.Remove Nth Node From End of List</title>
       <link>https://jie0117.github.io/blog/leetcode_19/</link>
