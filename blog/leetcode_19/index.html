@@ -146,8 +146,8 @@
 <li>處理邊界情況：當要刪除的節點剛好是head節點時，我們需要特殊處理。 有了dummy節點，我們無需單獨檢查頭節點是否是要刪除的節點，而是可以透過調整指標來刪除head節點。</li>
 <li>簡化程式碼：使用dummy節點可以簡化程式碼邏輯，因為我們可以確保first指標總是指向要刪除節點的前一個節點。 這樣，我們可以在統一的邏輯下處理所有情況</li>
 </ul>
-<p>first：指向要刪除節點的前一個節點。
-second：找到List的尾端。</p>
+<p>first：指向要刪除節點的前一個節點。<!-- raw HTML omitted -->
+second：(1)用以固定跟first相對位置(2)找到List的尾端。</p>
 <ol>
 <li>利用second指標指向從起點算起第n個位置</li>
 <li>同時移動first以及second，直到second變成NULL。first跟second相對位置是固定的，second先走到第n個位置，此時first跟second相差n，當兩個指標一起走完while迴圈後，second會等於NULL，同時也代表first就是從尾端數來第n+1個位置 (注意：從頭數n個以及從後面數n個的差異)</li>
