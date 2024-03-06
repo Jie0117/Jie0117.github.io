@@ -111,32 +111,85 @@
     <main class="grow">
 <div class="prose prose-stone dark:prose-invert max-w-none">
 <div class="mb-3">
-  <h1 class="top-h1" style="font-size: 2.75em">x86,x64,AMD64,ARM64傻傻分不清？</h1>
-  <p class="mb-1">March 3, 2024</p>
+  <h1 class="top-h1" style="font-size: 2.75em">使用Hugo以及Github建立個人網頁 for Windows</h1>
+  <p class="mb-1">March 6, 2024</p>
   <p>&mdash;</p>
 </div>
 
 <div class="content">
   
-  <h1 id="前言">前言</h1>
-<p>在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。</p>
-<p>因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！</p>
-<h1 id="arm64">ARM64</h1>
-<p>ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。</p>
-<p>ARM架構一直以來都在行動裝置市場上佔有主導地位，其<strong>低功耗</strong>和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。</p>
-<p>ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。</p>
-<h1 id="x86-x64-amd64">x86, x64, AMD64</h1>
-<p>x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳<!-- raw HTML omitted --></p>
-<h1 id="總結">總結：</h1>
-<p>Intel及AMD採用</p>
-<ul>
-<li>x64 = 32位元指令集</li>
-<li>x86, AMD64 = 64位元指令集(可向下相容32位元)</li>
-</ul>
-<p>Nvidia、Qualcomm 、Samsung、Apple採用</p>
-<ul>
-<li>ARM架構</li>
-</ul>
+  <h2 id="事前準備">事前準備</h2>
+<ol>
+<li>Hugo: <a href="https://github.com/gohugoio/hugo/releases">https://github.com/gohugoio/hugo/releases</a>
+(建議下載此版本，for Windows Intel or AMD 64位元CPU <a href="https://github.com/gohugoio/hugo/releases/download/v0.123.7/hugo_extended_0.123.7_windows-amd64.zip">https://github.com/gohugoio/hugo/releases/download/v0.123.7/hugo_extended_0.123.7_windows-amd64.zip</a>)</li>
+<li>Powershell: <a href="https://github.com/PowerShell/PowerShell/releases/tag/v7.4.1">https://github.com/PowerShell/PowerShell/releases/tag/v7.4.1</a> (注意：Windows Powershell跟Powershell是不同的程式，也可以使用WSL)</li>
+<li>Git: <a href="https://git-scm.com/">https://git-scm.com/</a></li>
+</ol>
+<h2 id="step-1-建立hugo-site">Step 1： 建立hugo site</h2>
+<pre tabindex="0"><code>	//建立一個新的hugo專案
+	./hugo new site quickstart 
+
+	//移動到quickstart資料夾內
+    cd quickstart 			 
+
+	//初始化git
+    git init 			
+    	 
+    //下載ananke這個主題
+    git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke 
+    
+    //在hugo.toml這個檔案告知Hugo我要使用ananke主題
+    echo &#34;theme = &#39;ananke&#39;&#34; &gt;&gt; hugo.toml 
+    
+    //啟動Hugo的開發伺服器來查看網站
+    ./hugo server	
+</code></pre><h2 id="step-2-新增內容">Step 2： 新增內容</h2>
+<pre tabindex="0"><code>	//在post這個資料夾建立markdown格式的內容，之後文章就是打在my-first-post.md裡面
+	hugo new content posts/my-first-post.md 
+</code></pre><p>接下來打開文字編輯軟體你會看到，前面的內容中的draft = true。 預設情況下，Hugo 在建立網站時不會建立草稿內容。</p>
+<pre tabindex="0"><code>	+++ 
+	title = &#39;My First Post&#39; 
+	date = 2024-01-14T07:07:07+01:00 
+	draft = true 
+	+++
+</code></pre><p>儲存文件，然後啟動Hugo的開發伺服器來查看網站。 可以執行以下任一命令來包含草稿內容。</p>
+<pre tabindex="0"><code>	./hugo server --buildDrafts 
+	./hugo server -D
+</code></pre><p>透過powershell中顯示的 URL(如下列) 查看網站。 當繼續新增和變更內容時，保持開發伺服器運作，會及時顯示在瀏覽器上面。</p>
+<pre tabindex="0"><code>	Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+</code></pre><h2 id="step-3-更新配置檔案hugotoml">Step 3： 更新配置檔案hugo.toml</h2>
+<p>打開hugo.toml你會看到下列這些設定，請根據自己喜好更改。舉例來說，baseURL = &lsquo;https://<em><strong>username</strong></em>.github.io/&rsquo;</p>
+<pre tabindex="0"><code>	baseURL = &#39;https://example.org/&#39;
+	languageCode = &#39;en-us&#39;
+	title = &#39;My New Hugo Site&#39;
+	theme = &#39;ananke&#39;
+</code></pre><h2 id="step-4-生成網站檔案">Step 4： 生成網站檔案</h2>
+<p>請執行下列指令，用來生成網站檔案，生成好的檔案會存在public資料夾裡面</p>
+<pre tabindex="0"><code>	./hugo
+</code></pre><h2 id="step-5-發布到github上">Step 5： 發布到Github上</h2>
+<p>到此我們已經完成了個人網站了，現在我們要將他發佈到Github的伺服器上面</p>
+<pre tabindex="0"><code>	// 進入hugo資料夾，進入public資料夾中
+	cd public
+
+	// 初始化Git
+	git init
+
+	// 將你的網站程式碼添加到這個新的Git
+	git add .
+
+	// 提交你的更改，並添加訊息
+	git commit -m &#34;Initial commit&#34;
+
+	// 將分支名稱改為 &#34;main&#34;，這是 GitHub 的新預設分支名稱
+	git branch -M main
+
+	# 將這個倉庫關聯到你在 GitHub 上創建的倉庫
+	git remote add origin https://github.com/username/username.github.io.git
+
+	// 將你的網站程式碼推送到 GitHub
+	git push -u origin main
+</code></pre><h2 id="step-6-查看網站">Step 6： 查看網站</h2>
+<p>接下來到了收穫成果的時候了，到https://<em><strong>username</strong></em>.github.io查看你的個人網站吧！</p>
 
   <script src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
   
@@ -153,8 +206,8 @@
   <h3 class="mb-1 mt-1 text-left mr-4">
     
     <a
-      href="/blog/leetcode_19/"
-      title="Leetcode 19.Remove Nth Node From End of List"
+      href="/blog/isa/"
+      title="x86,x64,AMD64,ARM64傻傻分不清？"
     >
       <i class="nav-menu fas fa-chevron-circle-left"></i>
     </a>
@@ -162,12 +215,7 @@
   </h3>
   <h3 class="mb-1 mt-1 text-left ml-4">
     
-    <a
-      href="/blog/built_website_with_hugo/"
-      title="使用Hugo以及Github建立個人網頁 for Windows"
-    >
-      <i class="nav-menu fas fa-chevron-circle-right"></i>
-    </a>
+    <i class="text-gray-300 dark:text-gray-600 fas fa-chevron-circle-right"></i>
     
   </h3>
 </div>
