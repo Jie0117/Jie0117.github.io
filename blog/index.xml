@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jie Blog on </title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in Jie Blog on </description>
+    <title>Jie&#39;s Blog on </title>
+    <link>https://jie0117.github.io/blog/</link>
+    <description>Recent content in Jie&#39;s Blog on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Wed, 06 Mar 2024 23:04:19 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jie0117.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>使用Hugo以及Github建立個人網頁 for Windows</title>
-      <link>http://localhost:1313/blog/built_website_with_hugo/</link>
+      <link>https://jie0117.github.io/blog/built_website_with_hugo/</link>
       <pubDate>Wed, 06 Mar 2024 23:04:19 +0800</pubDate>
-      <guid>http://localhost:1313/blog/built_website_with_hugo/</guid>
+      <guid>https://jie0117.github.io/blog/built_website_with_hugo/</guid>
       <description>事前準備 Hugo: https://github.com/gohugoio/hugo/releases (建議下載此版本，for Windows Intel or AMD 64位元CPU https://github.com/gohugoio/hugo/releases/download/v0.123.7/hugo_extended_0.123.7_windows-amd64.zip) Powershell: https://github.com/PowerShell/PowerShell/releases/tag/v7.4.1 (注意：Windows Powershell跟Powershell是不同的程式，也可以使用WSL) Git: https://git-scm.com/ Step 1： 建立hugo site //建立一個新的hugo專案 ./hugo new site quickstart //移動到quickstart資料夾內 cd quickstart //初始化git git init //下載ananke這個主題 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke //在hugo.toml這個檔案告知Hugo我要使用ananke主題 echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.toml //啟動Hugo的開發伺服器來查看網站 ./hugo server&#x9;Step 2： 新增內容 //在post這個資料夾建立markdown格式的內容，之後文章就是打在my-first-post.md裡面 hugo new content posts/my-first-post.md 接下來打開文字編輯軟體你會看到，前面的內容中的draft = true。 預設情況下，Hugo 在建立網站時不會建立草稿內容。&#xA;+++ title = &amp;#39;My First Post&amp;#39; date = 2024-01-14T07:07:07+01:00 draft = true +++ 儲存文件，然後啟動Hugo的開發伺服器來查看網站。 可以執行以下任一命令來包含草稿內容。</description>
     </item>
     <item>
       <title>x86,x64,AMD64,ARM64傻傻分不清？</title>
-      <link>http://localhost:1313/blog/isa/</link>
+      <link>https://jie0117.github.io/blog/isa/</link>
       <pubDate>Sun, 03 Mar 2024 17:55:56 +0800</pubDate>
-      <guid>http://localhost:1313/blog/isa/</guid>
+      <guid>https://jie0117.github.io/blog/isa/</guid>
       <description>前言 在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。&#xA;因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！&#xA;ARM64 ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。&#xA;ARM架構一直以來都在行動裝置市場上佔有主導地位，其低功耗和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。&#xA;ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。&#xA;x86, x64, AMD64 x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳&#xA;總結： Intel及AMD採用&#xA;x64 = 32位元指令集 x86, AMD64 = 64位元指令集(可向下相容32位元) Nvidia、Qualcomm 、Samsung、Apple採用&#xA;ARM架構 </description>
     </item>
     <item>
       <title>Leetcode 19.Remove Nth Node From End of List</title>
-      <link>http://localhost:1313/blog/leetcode_19/</link>
+      <link>https://jie0117.github.io/blog/leetcode_19/</link>
       <pubDate>Sun, 03 Mar 2024 16:15:55 +0800</pubDate>
-      <guid>http://localhost:1313/blog/leetcode_19/</guid>
+      <guid>https://jie0117.github.io/blog/leetcode_19/</guid>
       <description>題目敘述 Given the head of a linked list, remove the nth node from the end of the list and return its head.&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5]&#xA;Example 2: Input: head = [1], n = 1 Output: []&#xA;Example 3: Input: head = [1,2], n = 1 Output: [1]&#xA;限制條件 The number of nodes in the list is sz.</description>
     </item>
     <item>
       <title>Leetcode 6.Zigzag Conversion</title>
-      <link>http://localhost:1313/blog/leetcode_6_zigzag_conversion/</link>
+      <link>https://jie0117.github.io/blog/leetcode_6_zigzag_conversion/</link>
       <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
-      <guid>http://localhost:1313/blog/leetcode_6_zigzag_conversion/</guid>
+      <guid>https://jie0117.github.io/blog/leetcode_6_zigzag_conversion/</guid>
       <description>題目敘述 字串 &amp;quot;PAYPALISHIRING&amp;quot; 按照給定的行數以鋸齒形模式編寫，就像這樣： （為了更好的可讀性，你可以這樣閱讀）&#xA;P A H N A P L S I I G Y I R&#xA;之後依照行順序讀取: &amp;quot;PAHNAPLSIIGYIR&amp;quot;&#xA;函數總共會有兩個參數字串s跟整數numRows&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 3 Output: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;&#xA;Example 2:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 4 Output: &amp;ldquo;PINALSIGYAHRPI&amp;rdquo; Explanation: P I N A L S I G Y A H R P I&#xA;Example 3:&#xA;Input: s = &amp;ldquo;A&amp;rdquo;, numRows = 1 Output: &amp;ldquo;A&amp;rdquo;</description>
     </item>
     <item>
       <title>Server Proxy</title>
-      <link>http://localhost:1313/blog/server/</link>
+      <link>https://jie0117.github.io/blog/server/</link>
       <pubDate>Sat, 02 Mar 2024 11:37:36 +0800</pubDate>
-      <guid>http://localhost:1313/blog/server/</guid>
+      <guid>https://jie0117.github.io/blog/server/</guid>
       <description>正向代理 vs. 反向代理 當談到網路和網路服務時，&amp;ldquo;正向代理&amp;rdquo;（Forward Proxy）和&amp;quot;反向代理&amp;quot;（Reverse Proxy）是兩個常被提及的概念。這兩種代理伺服器（Proxy Server）都是在網路通訊中發揮重要作用的工具，但它們的功能和工作方式卻大不相同。對於一般使用者比較常接觸到的是正向代理(如：VPN)，而反向代理則是網站架設者會接觸到的。 接下來就讓我們來看看兩者之間的差異！&#xA;正向代理（Forward Proxy） 讓我們先從&amp;quot;正向代理&amp;quot;開始說起。正向代理通常是作為客戶端（client）與公共網路（Internet）之間的一個中間媒介。當用戶端設備（例如個人電腦、手機等）要求訪問網路上的資源時，它會先向正向代理伺服器發送請求。代理伺服器會代表客戶端向目標伺服器（例如網站、服務器等）發出請求，並將其回應返回給客戶端。簡單來說，正向代理&amp;quot;代表&amp;quot;客戶端去訪問網絡上的資源，並將收到的資源回傳給客戶端。&#xA;客戶端（Client Side） 發送一個請求（Request）到正向代理（Forward Proxy）。 正向代理 接收到這個請求後，會代表客戶端向目標伺服器（Target Server）發送另一個請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給正向代理。 正向代理 收到來自目標伺服器的回應後，再將這個回應轉發給最初的客戶端。 簡而言之，正向代理的流程是客戶端通過正向代理來訪問目標伺服器(也就是說可以對目標伺服器隱藏身分)，並將目標伺服器的回應返回給客戶端。這種代理方式通常用於控制、過濾或監視用戶端的request，也可以用於繞過某些網路限制(如：翻牆)。&#xA;反向代理（Reverse Proxy） 相反，&amp;ldquo;反向代理&amp;quot;則在伺服器端（server-side）扮演著類似的角色，但其工作方式則截然不同。當客戶端向伺服器發送請求時，這個請求會先傳送到反向代理伺服器。反向代理伺服器會根據特定的規則和配置，將這個請求轉發到適當的後端伺服器（如應用伺服器、資料庫伺服器等）。當後端伺服器返回結果時，反向代理伺服器再將這些結果轉發給最初的客戶端。簡而言之，反向代理伺服器&amp;quot;代表&amp;quot;伺服器來處理客戶端的請求，並將結果返回給客戶端。&#xA;客戶端（Client Side） 發送一個請求（Request）到反向代理（Reverse Proxy）。注意：以客戶端視角是不知道反向代理伺服器的存在。 反向代理 接收到這個請求後，會代表根據自定義規則向伺服器（Server）分配請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給反向代理。 反向代理 收到來自伺服器的回應後，再將這個回應轉發給最初的客戶端。 總體而言，反向代理在客戶端和目標伺服器之間充當了中間人的角色，但與正向代理不同的是，反向代理是代表伺服器而不是客戶端。它隱藏了後端伺服器的真實身份和結構，並可以提供負載平衡、SSL 加密、緩存等功能，以增強伺服器的效率、安全性和可擴展性。&#xA;結論 正向代理和反向代理，兩者都是代理伺服器，但在網路架構中扮演不同的角色和功能。總結這兩者的主要區別和功能：&#xA;正向代理（Forward Proxy）：&#xA;位於客戶端與網絡之間：客戶端在發送請求時，不直接連接到目標伺服器，而是透過正向代理。 隱藏客戶端身份：正向代理伺服器可以隱藏客戶端的真實IP地址和其他身份資訊。 過濾和監控：可用於過濾內容、提供安全性、加速訪問速度等功能。 代理客戶端訪問外部資源：通常用於內部網絡中，客戶端訪問外部資源時，正向代理會代表客戶端向外部伺服器發送請求。 反向代理（Reverse Proxy）：&#xA;位於目標伺服器與網絡之間：客戶端發送請求時，先連接到反向代理，再由反向代理轉發請求到目標伺服器。 隱藏伺服器身份：反向代理隱藏了目標伺服器的真實IP地址和結構，保護伺服器的安全性。 負載平衡：可以分發流量到多個後端伺服器，以提高性能和可擴展性。 SSL 終端：負責處理 SSL 加密和解密，減輕伺服器的負擔。 緩存：可以緩存靜態資源，提高資源的訪問速度和效率。 </description>
     </item>
   </channel>
