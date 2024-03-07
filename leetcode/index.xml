@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leetcodes on </title>
+    <link>http://localhost:1313/leetcode/</link>
+    <description>Recent content in Leetcodes on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 03 Mar 2024 16:15:55 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Leetcode 19.Remove Nth Node From End of List</title>
+      <link>http://localhost:1313/leetcode/leetcode_19/</link>
+      <pubDate>Sun, 03 Mar 2024 16:15:55 +0800</pubDate>
+      <guid>http://localhost:1313/leetcode/leetcode_19/</guid>
+      <description>題目敘述 Given the head of a linked list, remove the nth node from the end of the list and return its head.&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5]&#xA;Example 2: Input: head = [1], n = 1 Output: []&#xA;Example 3: Input: head = [1,2], n = 1 Output: [1]&#xA;限制條件 The number of nodes in the list is sz.</description>
+    </item>
+    <item>
+      <title>Leetcode 6.Zigzag Conversion</title>
+      <link>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</link>
+      <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
+      <guid>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</guid>
+      <description>題目敘述 字串 &amp;quot;PAYPALISHIRING&amp;quot; 按照給定的行數以鋸齒形模式編寫，就像這樣： （為了更好的可讀性，你可以這樣閱讀）&#xA;P A H N A P L S I I G Y I R&#xA;之後依照行順序讀取: &amp;quot;PAHNAPLSIIGYIR&amp;quot;&#xA;函數總共會有兩個參數字串s跟整數numRows&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 3 Output: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;&#xA;Example 2:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 4 Output: &amp;ldquo;PINALSIGYAHRPI&amp;rdquo; Explanation: P I N A L S I G Y A H R P I&#xA;Example 3:&#xA;Input: s = &amp;ldquo;A&amp;rdquo;, numRows = 1 Output: &amp;ldquo;A&amp;rdquo;</description>
+    </item>
+  </channel>
+</rss>
