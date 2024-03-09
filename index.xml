@@ -6,8 +6,15 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 06 Mar 2024 23:04:19 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 09 Mar 2024 17:46:52 +0800</lastBuildDate>
     <atom:link href="https://jie0117.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>948. Bag of Tokens</title>
+      <link>https://jie0117.github.io/leetcode/l948/</link>
+      <pubDate>Sat, 09 Mar 2024 17:46:52 +0800</pubDate>
+      <guid>https://jie0117.github.io/leetcode/l948/</guid>
+      <description>題目敘述 由於原題目敘述不好理解，這裡用自己易理解的方式陳述。給予一個陣列，陣列包含購買一個積分(score)所需要的(能量)power，目標是求max_score。 我們可以做的事情有兩件 (1)使用1score換取陣列中所標示的power&#xA;token[i]=500 before after score 1 0 power 0 500 (2)使用power換取1score&#xA;token[i]=500 before after score 0 1 power 500 0 想法 先對陣列進行升序排序，簡化後續操作 使用雙指針head和tail分別指向最小和最大的代幣值 當前power足夠時,從head指針處獲取score, score加1 當前power不足時,如果score大於0,則從tail指針處出售1score, 獲取power 重複3和4,直到無法獲取或出售score為止 返回在此過程中獲得的最高分數 最終只需將整個陣列遍歷一次就可得出結果 code int bagOfTokensScore(vector&amp;lt;int&amp;gt;&amp;amp; tokens, int power) { sort(tokens.begin(), tokens.end()); int score = 0; int maxScore = 0; int head = 0; int tail = tokens.size() - 1; while (head &amp;lt;= tail) { if (power &amp;gt;= tokens[head]) { power -= tokens[head++]; score++; maxScore = max(maxScore, score); } else if (score &amp;gt; 0) { power += tokens[tail--]; score--; } else { break; } } return maxScore; } </description>
+    </item>
     <item>
       <title>使用Hugo以及Github建立個人網頁 for Windows</title>
       <link>https://jie0117.github.io/blog/built_website_with_hugo/</link>
@@ -20,17 +27,17 @@
       <link>https://jie0117.github.io/blog/isa/</link>
       <pubDate>Sun, 03 Mar 2024 17:55:56 +0800</pubDate>
       <guid>https://jie0117.github.io/blog/isa/</guid>
-      <description>前言 在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。&#xA;因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！&#xA;ARM64 ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。&#xA;ARM架構一直以來都在行動裝置市場上佔有主導地位，其低功耗和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。&#xA;ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。&#xA;x86, x64, AMD64 x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳&#xA;總結： Intel及AMD採用&#xA;x64 = 32位元指令集 x86, AMD64 = 64位元指令集(可向下相容32位元) Nvidia、Qualcomm 、Samsung、Apple採用&#xA;ARM架構 </description>
+      <description>前言 在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。&#xA;因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！&#xA;ARM64 ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。&#xA;ARM架構一直以來都在行動裝置市場上佔有主導地位，其低功耗和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。&#xA;ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。&#xA;x86, x64, AMD64 x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳&#xA;總結： Intel及AMD採用&#xA;x64 = 32位元指令集 x86, AMD64 = 64位元指令集(可向下相容32位元) Nvidia、Qualcomm 、Samsung、Apple採用&#xA;ARM架構指令集 </description>
     </item>
     <item>
-      <title>Leetcode 19.Remove Nth Node From End of List</title>
+      <title>19.Remove Nth Node From End of List</title>
       <link>https://jie0117.github.io/leetcode/leetcode_19/</link>
       <pubDate>Sun, 03 Mar 2024 16:15:55 +0800</pubDate>
       <guid>https://jie0117.github.io/leetcode/leetcode_19/</guid>
       <description>題目敘述 Given the head of a linked list, remove the nth node from the end of the list and return its head.&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5]&#xA;Example 2: Input: head = [1], n = 1 Output: []&#xA;Example 3: Input: head = [1,2], n = 1 Output: [1]&#xA;限制條件 The number of nodes in the list is sz.</description>
     </item>
     <item>
-      <title>Leetcode 6.Zigzag Conversion</title>
+      <title>6.Zigzag Conversion</title>
       <link>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</link>
       <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
       <guid>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</guid>
