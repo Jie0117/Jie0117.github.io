@@ -124,26 +124,17 @@
   <h2 id="設定log裡面顯示的使用者以及email">設定log裡面顯示的使用者以及email</h2>
 <p>若你有傳遞 &ndash;global 參數，只需要做這工作一次，因為在此系統，不論 Git 做任何事都會採用此資訊。 若你想指定不同的名字或電子郵件給特定的專案，只需要在該專案資料夾內執行此命令，並確定未加上 &ndash;global 參數</p>
 <h3 id="windows系統會預設儲存於cusergitconfig">windows系統會預設儲存於C:\user\.gitconfig</h3>
-<pre tabindex="0"><code>
-$ git config --global user.name &#34;Jie Chen&#34;
-
-  
-
+<pre tabindex="0"><code>$ git config --global user.name &#34;Jie Chen&#34;
 $ git config --global user.email Jiechen@example.com
-
-  
 </code></pre><h2 id="指定文字編輯器">指定文字編輯器</h2>
 <p>如果你想要在 Windows 系統上使用 Notepad++ 做為編輯器，你可以執行下列步驟：</p>
-<pre tabindex="0"><code>
-$ git config --global core.editor &#34;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -nosession&#34;
+<pre tabindex="0"><code>$ git config --global core.editor &#34;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -nosession&#34;
 </code></pre><h2 id="在現有資料夾中初始化git">在現有資料夾中初始化git</h2>
 <p>指令執行後會在當前資料夾新增一個.git隱藏檔案</p>
-<pre tabindex="0"><code>
-$ git init
+<pre tabindex="0"><code>$ git init
 </code></pre><h2 id="複製現有repository">複製現有repository</h2>
 <p>若你想要取得現有 Git repository的複本，那你需要使用的命令是 git clone</p>
-<pre tabindex="0"><code>
-$ git clone [url] [本機指定路徑(選填)]
+<pre tabindex="0"><code>$ git clone [url] [本機指定路徑(選填)]
 </code></pre><h2 id="檢查檔案狀態">檢查檔案狀態</h2>
 <p>檔案的狀況只會有以下四種，它們的狀態可能是「Unmodified」, 「Modified」, 「Staged」, 「Untracked」，下圖為檔案狀態的生命週期</p>
 <ul>
@@ -161,17 +152,12 @@ $ git clone [url] [本機指定路徑(選填)]
 <img src="/images/git_status.png" alt="git status"></p>
 </li>
 </ul>
-<pre tabindex="0"><code>
-$ git status
-
+<pre tabindex="0"><code>$ git status
 $ git status -s //簡潔的status輸出
 </code></pre><p>上述指令會告知目前的檔案狀況</p>
 <h2 id="追蹤新的檔案">追蹤新的檔案</h2>
-<pre tabindex="0"><code>
-$ git add [檔案名稱]
-
+<pre tabindex="0"><code>$ git add [檔案名稱]
 $ git add . //會將所有Untracked和Modified的文件添加到暫存區
-
 $ git add * //會將中所有Modified的文件添加到暫存區，但不包括Untracked的文件
 </code></pre><h2 id="檢視已暫存及未暫存的檔案">檢視已暫存及未暫存的檔案</h2>
 <pre tabindex="0"><code>$ git diff // 可顯示檔案裡的哪些列被加入或刪除
