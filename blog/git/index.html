@@ -165,7 +165,7 @@ $ git add * //會將中所有Modified的文件添加到暫存區，但不包括U
 <pre tabindex="0"><code>$ git commit //啟用文字編輯器提交訊息
 $ git commit -m &#34;Your commit message&#34; //直接輸入提交訊息 
 </code></pre><p>第一列會啟動你所選定的文字編輯器 （由你的 Shell 的 $EDITOR 環境變數所指定——通常是 vim 或 emacs；你也可以使用 git config &ndash;global core.editor 命令指定任何一個你想使用文字編輯器）。</p>
-<h2 id="略過暫存區">略過暫存區</h2>
+<h2 id="略過暫存區直接提交">略過暫存區直接提交</h2>
 <pre tabindex="0"><code>$ git commit -a -m &#39;added new benchmarks&#39;
 </code></pre><p>在 git commit 命令加上 -a 選項，使 Git 在提交前自動預存所有已追蹤的檔案，讓你略過 git add 步驟</p>
 <p><strong>注意：</strong> 在提交之前，你不需要執行 git add 來暫存存檔案； 那是因為 -a 選項會納入所有已變更的檔案； 雖然很方便，但小心，有時候它會加入你並不想要的變更。</p>
@@ -274,8 +274,8 @@ $ git add README
 </span></span><span style="display:flex;"><span>$ git commit --amend
 </span></span></code></pre></div><p>這個命令會再次把暫存區拿來提交， 如果自從上次提交以來你沒有做過任何檔案修改，那麼整個快照看起來會與上次提交的一模一樣，唯一有可能更動的是提交訊息。</p>
 <h2 id="將已暫存的檔案移出暫存區">將已暫存的檔案移出暫存區</h2>
-<pre tabindex="0"><code>$ git reset HEAD [filename]
-</code></pre><h2 id="顯示你的遠端版本庫">顯示你的遠端版本庫</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git reset HEAD <span style="color:#f92672">[</span>filename<span style="color:#f92672">]</span>
+</span></span></code></pre></div><h2 id="顯示你的遠端版本庫">顯示你的遠端版本庫</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git remote
 </span></span></code></pre></div><h2 id="新增遠端版本庫">新增遠端版本庫</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git remote add <span style="color:#f92672">[</span>remote-name<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span>
