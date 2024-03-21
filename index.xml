@@ -6,8 +6,15 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 09 Mar 2024 17:46:52 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2024 13:27:08 +0800</lastBuildDate>
     <atom:link href="https://jie0117.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git指令基礎</title>
+      <link>https://jie0117.github.io/blog/git/</link>
+      <pubDate>Thu, 14 Mar 2024 13:27:08 +0800</pubDate>
+      <guid>https://jie0117.github.io/blog/git/</guid>
+      <description>設定log裡面顯示的使用者以及email 若你有傳遞 &amp;ndash;global 參數，只需要做這工作一次，因為在此系統，不論 Git 做任何事都會採用此資訊。 若你想指定不同的名字或電子郵件給特定的專案，只需要在該專案資料夾內執行此命令，並確定未加上 &amp;ndash;global 參數&#xA;windows系統會預設儲存於C:\user\.gitconfig $ git config --global user.name &amp;#34;Jie Chen&amp;#34; $ git config --global user.email Jiechen@example.com 指定文字編輯器 如果你想要在 Windows 系統上使用 Notepad++ 做為編輯器，你可以執行下列步驟：&#xA;$ git config --global core.editor &amp;#34;&amp;#39;C:/Program Files (x86)/Notepad++/notepad++.exe&amp;#39; -multiInst -nosession&amp;#34; 在現有資料夾中初始化git 指令執行後會在當前資料夾新增一個.git隱藏檔案&#xA;$ git init 複製現有repository 若你想要取得現有 Git repository的複本，那你需要使用的命令是 git clone&#xA;$ git clone [url] [本機指定路徑(選填)] 檢查檔案狀態 檔案的狀況只會有以下四種，它們的狀態可能是「Unmodified」, 「Modified」, 「Staged」, 「Untracked」，下圖為檔案狀態的生命週期&#xA;Unmodified（未修改）：這表示文件的內容與上一次提交時相同，沒有任何更改。這是最基本的狀態，意味著文件沒有被更改。&#xA;Modified（已修改）：這表示文件的內容已經被修改，但是這些修改還沒有被暫存到Git的暫存區（使用git add命令）。這些修改只存在於工作資料夾中。&#xA;Staged（已暫存）：這表示文件的修改已經被暫存到Git的暫存區，準備提交到版本庫（使用git commit命令）。在這個狀態下，文件的當前版本與上一次提交時的版本不同，但是已經暫存並準備好提交。&#xA;Untracked（未跟蹤）：這表示文件是新建的，並且尚未被Git跟蹤。這些文件存在於工作資料夾中，但是還沒有被添加到Git的版本控制中。通常情況下，這些文件需要使用git add命令將其添加到暫存區，然後再進行提交。 $ git status $ git status -s //簡潔的status輸出 上述指令會告知目前的檔案狀況</description>
+    </item>
     <item>
       <title>948. Bag of Tokens</title>
       <link>https://jie0117.github.io/leetcode/l948/</link>

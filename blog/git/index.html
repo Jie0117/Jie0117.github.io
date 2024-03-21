@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh" class="m-auto dark"><head>
+  <title>Jie&#39;s site</title>
+
+<meta name="theme-color" content="" />
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<meta name="description" content="Website title" />
+<meta name="author" content="Jie Chen" />
+<meta name="generator" content="aafu theme by Darshan in Hugo 0.123.6" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">        <link rel="manifest" href="/site.webmanifest">        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#252627">        <link rel="shortcut icon" href="/favicon.ico">
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.rawgit.com/jpswalsh/academicons/master/css/academicons.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Didact+Gothic%7CRoboto:400%7CRoboto+Mono"
+  />
+  <link rel="stylesheet" href="/css/aafu.css" />
+
+
+
+
+
+
+<link href="/main.min.2941ed4b8c03993dba3fde92b97c0050e448d0b9add8519b47c41ba954418f27.css" rel="stylesheet" />
+
+
+  
+
+  <script>
+    let html = document.querySelector("html");
+    let theme = window.localStorage.getItem("theme");
+    if (theme) {
+      theme === "dark"
+        ? html.classList.add("dark")
+        : html.classList.remove("dark");
+    } else if (html.classList.contains("dark")) {
+      window.localStorage.setItem("theme", "dark");
+    } else {
+      html.classList.remove("dark");
+      window.localStorage.setItem("theme", "light");
+    }
+
+    window.onload = () => {
+      let themeToggle = document.querySelector(".theme-toggle");
+      if (window.localStorage.getItem("theme") === "dark") {
+        themeToggle.classList.remove("bi-moon-fill");
+        themeToggle.classList.add("bi-brightness-high");
+      } else {
+        themeToggle.classList.add("bi-moon-fill");
+        themeToggle.classList.remove("bi-brightness-high");
+      }
+
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+
+    window.onresize = () => {
+      let defaultActivePanel = document.querySelector(".accordion.active");
+      if (defaultActivePanel) {
+        defaultActivePanel.nextElementSibling.style.maxHeight =
+          defaultActivePanel.nextElementSibling.scrollHeight + "px";
+      }
+    };
+  </script>
+</head>
+<body class="h-screen p-2 m-auto max-w-4xl flex flex-col">
+    
+    <header
+  class="nav flex flex-row row py-2 mb-6 w-full border-b border-gray-300 dark:border-gray-700 justify-between"
+>
+  <div>
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="https://jie0117.github.io/">Home</a>    
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="/blog">Blog</a>
+    <a class="no-underline p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800" href="/leetcode">Leetcode</a>
+  </div>
+  
+  <i
+    class="fas fa-sun theme-toggle text-blue-500 hover:text-blue-700 dark:text-yellow-300 dark:hover:text-yellow-500 cursor-pointer text-lg mr-9 sm:mr-0"
+    onclick="lightDark(this)"
+  ></i>
+</header>
+
+<script>
+  const lightDark = (el) => {
+    let html = document.querySelector("html");
+    if (html.classList.contains("dark")) {
+      html.classList.remove("dark");
+      el.classList.add("fa-moon");
+      el.classList.remove("fa-sun");
+      window.localStorage.setItem("theme", "light");
+    } else {
+      html.classList.add("dark");
+      el.classList.add("fa-sun");
+      el.classList.remove("fa-moon");
+      window.localStorage.setItem("theme", "dark");
+    }
+  };
+</script>
+
+    
+    <main class="grow">
+<div class="prose prose-stone dark:prose-invert max-w-none">
+<div class="mb-3">
+  <h1 class="top-h1" style="font-size: 2.75em">Git指令基礎</h1>
+  <p class="mb-1">March 14, 2024</p>
+  <p>&mdash;</p>
+</div>
+
+<div class="content">
+  
+  <h2 id="設定log裡面顯示的使用者以及email">設定log裡面顯示的使用者以及email</h2>
+<p>若你有傳遞 &ndash;global 參數，只需要做這工作一次，因為在此系統，不論 Git 做任何事都會採用此資訊。 若你想指定不同的名字或電子郵件給特定的專案，只需要在該專案資料夾內執行此命令，並確定未加上 &ndash;global 參數</p>
+<h3 id="windows系統會預設儲存於cusergitconfig">windows系統會預設儲存於C:\user\.gitconfig</h3>
+<pre tabindex="0"><code>
+$ git config --global user.name &#34;Jie Chen&#34;
+
+  
+
+$ git config --global user.email Jiechen@example.com
+
+  
+</code></pre><h2 id="指定文字編輯器">指定文字編輯器</h2>
+<p>如果你想要在 Windows 系統上使用 Notepad++ 做為編輯器，你可以執行下列步驟：</p>
+<pre tabindex="0"><code>
+$ git config --global core.editor &#34;&#39;C:/Program Files (x86)/Notepad++/notepad++.exe&#39; -multiInst -nosession&#34;
+</code></pre><h2 id="在現有資料夾中初始化git">在現有資料夾中初始化git</h2>
+<p>指令執行後會在當前資料夾新增一個.git隱藏檔案</p>
+<pre tabindex="0"><code>
+$ git init
+</code></pre><h2 id="複製現有repository">複製現有repository</h2>
+<p>若你想要取得現有 Git repository的複本，那你需要使用的命令是 git clone</p>
+<pre tabindex="0"><code>
+$ git clone [url] [本機指定路徑(選填)]
+</code></pre><h2 id="檢查檔案狀態">檢查檔案狀態</h2>
+<p>檔案的狀況只會有以下四種，它們的狀態可能是「Unmodified」, 「Modified」, 「Staged」, 「Untracked」，下圖為檔案狀態的生命週期</p>
+<ul>
+<li>
+<p>Unmodified（未修改）：這表示文件的內容與上一次提交時相同，沒有任何更改。這是最基本的狀態，意味著文件沒有被更改。</p>
+</li>
+<li>
+<p>Modified（已修改）：這表示文件的內容已經被修改，但是這些修改還沒有被暫存到Git的暫存區（使用git add命令）。這些修改只存在於工作資料夾中。</p>
+</li>
+<li>
+<p>Staged（已暫存）：這表示文件的修改已經被暫存到Git的暫存區，準備提交到版本庫（使用git commit命令）。在這個狀態下，文件的當前版本與上一次提交時的版本不同，但是已經暫存並準備好提交。</p>
+</li>
+<li>
+<p>Untracked（未跟蹤）：這表示文件是新建的，並且尚未被Git跟蹤。這些文件存在於工作資料夾中，但是還沒有被添加到Git的版本控制中。通常情況下，這些文件需要使用git add命令將其添加到暫存區，然後再進行提交。
+<img src="/images/git_status.png" alt="git status"></p>
+</li>
+</ul>
+<pre tabindex="0"><code>
+$ git status
+
+$ git status -s //簡潔的status輸出
+</code></pre><p>上述指令會告知目前的檔案狀況</p>
+<h2 id="追蹤新的檔案">追蹤新的檔案</h2>
+<pre tabindex="0"><code>
+$ git add [檔案名稱]
+
+$ git add . //會將所有Untracked和Modified的文件添加到暫存區
+
+$ git add * //會將中所有Modified的文件添加到暫存區，但不包括Untracked的文件
+</code></pre><h2 id="檢視已暫存及未暫存的檔案">檢視已暫存及未暫存的檔案</h2>
+<pre tabindex="0"><code>$ git diff // 可顯示檔案裡的哪些列被加入或刪除
+</code></pre><h2 id="提交你的暫存區">提交你的暫存區</h2>
+<pre tabindex="0"><code>$ git commit //啟用文字編輯器提交訊息
+$ git commit -m &#34;Your commit message&#34; //直接輸入提交訊息 
+</code></pre><p>第一列會啟動你所選定的文字編輯器 （由你的 Shell 的 $EDITOR 環境變數所指定——通常是 vim 或 emacs；你也可以使用 git config &ndash;global core.editor 命令指定任何一個你想使用文字編輯器）。</p>
+<h2 id="略過暫存區">略過暫存區</h2>
+<pre tabindex="0"><code>$ git commit -a -m &#39;added new benchmarks&#39;
+</code></pre><p>在 git commit 命令加上 -a 選項，使 Git 在提交前自動預存所有已追蹤的檔案，讓你略過 git add 步驟</p>
+<p><strong>注意：</strong> 在提交之前，你不需要執行 git add 來暫存存檔案； 那是因為 -a 選項會納入所有已變更的檔案； 雖然很方便，但小心，有時候它會加入你並不想要的變更。</p>
+<h2 id="移除檔案">移除檔案</h2>
+<pre tabindex="0"><code>$ git rm [filename] //會從git版本控制跟資料夾刪除
+$ git rm --cache [filename] //只刪除git版本控制，資料夾保留檔案
+</code></pre><p>要從 Git 中刪除一個檔案，你需要將它從暫存區檔案中移除，然後再commit； <code>git rm</code> 命令可完成此工作，<strong>它同時也會將該檔案從工作資料夾中移除</strong>。</p>
+<h2 id="移動檔案or重新命名">移動檔案or重新命名</h2>
+<pre tabindex="0"><code>$ git mv file_from file_to
+</code></pre><p>有人可能對此命令感到困惑，命令中的mv表示&quot;move&quot;（移動），但在這個情況下，它被用來執行重命名操作，因為mv命令也可以用於將文件移動到不同的資料夾中。第一個參數README.md是你要重命名的文件的原始名稱，第二個參數README是重命名後的目標名稱。</p>
+<h3 id="其實它相當於執行下列命令">其實它相當於執行下列命令：</h3>
+<pre tabindex="0"><code>$ mv README.md README
+$ git rm README.md
+$ git add README
+</code></pre><h2 id="檢視提交的歷史記錄">檢視提交的歷史記錄</h2>
+<p>預設情況（未加任何選項）<code>git log</code>  以最新的commit會先被列出來，但是<code>git log</code>  命令有大量且多樣的資訊，在這裡我們會展示一些受歡迎的選項。能精確地找出你想搜尋的結果。</p>
+<pre tabindex="0"><code>$ git log
+</code></pre><p>最有用的選項之一是 <code>-p</code>，用來顯示每筆提交所做的修改內容； 你還可以加上 <code>-2</code> 選項，限制只輸出最後兩筆提交內容</p>
+<pre tabindex="0"><code>$ git log -p -2 
+</code></pre><p>若想檢視每筆提交簡略的統計資訊，你可以使用 <code>--stat</code> 選項</p>
+<pre tabindex="0"><code>$ git log --stat
+</code></pre><p>另一個實用的選項是 <code>--pretty</code>， 用來改變原本預設輸出的格式，選項輸出的格式大致相同，但分別會少一些或者多一些資訊。例如：</p>
+<ul>
+<li><code>oneline</code></li>
+<li><code>short</code></li>
+<li><code>full</code></li>
+<li><code>fuller</code></li>
+</ul>
+<pre tabindex="0"><code>$ git log --pretty=oneline
+</code></pre><p>有趣的是<code>format</code>讓你可以指定自訂的輸出格式，當需要輸出給程式分析時特別有用。例如：</p>
+<pre tabindex="0"><code>$ git log --pretty=format:&#34;%h - %an, %ar : %s
+</code></pre><p>下列是一些可選的格式</p>
+<table>
+<thead>
+<tr>
+<th>選項</th>
+<th>輸出說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>%H</code></td>
+<td>該提交 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%h</code></td>
+<td>該提交簡短的 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%T</code></td>
+<td>「樹（tree）」物件的 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%t</code></td>
+<td>「樹」物件簡短的 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%P</code></td>
+<td>親代（parent）提交的 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%p</code></td>
+<td>親代提交簡短的 SHA-1 雜湊值</td>
+</tr>
+<tr>
+<td><code>%an</code></td>
+<td>作者名字</td>
+</tr>
+<tr>
+<td><code>%ae</code></td>
+<td>作者電子郵件</td>
+</tr>
+<tr>
+<td><code>%ad</code></td>
+<td>作者日期（依據 &ndash;date 選項值而有不同的格式）</td>
+</tr>
+<tr>
+<td><code>%ar</code></td>
+<td>作者日期，相對時間格式</td>
+</tr>
+<tr>
+<td><code>%cn</code></td>
+<td>提交者名字</td>
+</tr>
+<tr>
+<td><code>%ce</code></td>
+<td>提交者電子郵件</td>
+</tr>
+<tr>
+<td><code>%cd</code></td>
+<td>提交者日期</td>
+</tr>
+<tr>
+<td><code>%cr</code></td>
+<td>提交者日期，相對時間格式。</td>
+</tr>
+<tr>
+<td><code>%s</code></td>
+<td>標題</td>
+</tr>
+</tbody>
+</table>
+<h2 id="復原">復原</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git commit -m <span style="color:#e6db74">&#39;initial commit&#39;</span>
+</span></span><span style="display:flex;"><span>$ git add forgotten_file
+</span></span><span style="display:flex;"><span>$ git commit --amend
+</span></span></code></pre></div><p>這個命令會再次把暫存區拿來提交， 如果自從上次提交以來你沒有做過任何檔案修改，那麼整個快照看起來會與上次提交的一模一樣，唯一有可能更動的是提交訊息。</p>
+<h2 id="將已暫存的檔案移出暫存區">將已暫存的檔案移出暫存區</h2>
+<pre tabindex="0"><code>$ git reset HEAD [filename]
+</code></pre><h2 id="顯示你的遠端版本庫">顯示你的遠端版本庫</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git remote
+</span></span></code></pre></div><h2 id="新增遠端版本庫">新增遠端版本庫</h2>
+<pre tabindex="0"><code>$ git remote add [remote-name] [url]
+</code></pre><h2 id="從遠端獲取版本">從遠端獲取版本</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-console" data-lang="console"><span style="display:flex;"><span>$ git fetch <span style="color:#f92672">[</span>remote-name<span style="color:#f92672">]</span>
+</span></span></code></pre></div><h2 id="推送到遠端">推送到遠端</h2>
+<pre tabindex="0"><code>$ git push [remote-name] [branch-name]
+</code></pre><h2 id="檢視遠端">檢視遠端</h2>
+<pre tabindex="0"><code>$ git remote show [remote-name]
+</code></pre><h2 id="重新命名遠端">重新命名遠端</h2>
+<pre tabindex="0"><code>$ git remote rename [ori_name] [rename] 
+</code></pre><h2 id="刪除遠端">刪除遠端</h2>
+<pre tabindex="0"><code>$ git remote rm [remote-name]
+</code></pre>
+  <script src="https://unpkg.com/mermaid@8.8.1/dist/mermaid.min.js"></script>
+  
+  <script>
+        Array.from(document.getElementsByClassName('language-mermaid')).forEach(el => {
+        el.parentElement.outerHTML = `<div class="mermaid">${el.innerText}</div>`
+    })
+</script>
+
+</div>
+
+</div>
+<div class="flex flex-row justify-around my-2">
+  <h3 class="mb-1 mt-1 text-left mr-4">
+    
+    <a
+      href="/blog/built_website_with_hugo/"
+      title="使用Hugo以及Github建立個人網頁 for Windows"
+    >
+      <i class="nav-menu fas fa-chevron-circle-left"></i>
+    </a>
+    
+  </h3>
+  <h3 class="mb-1 mt-1 text-left ml-4">
+    
+    <i class="text-gray-300 dark:text-gray-600 fas fa-chevron-circle-right"></i>
+    
+  </h3>
+</div>
+
+
+    </main>
+    
+    <footer class="text-sm text-center border-t border-gray-300 dark:border-gray-700  py-6 ">
+  <p class="markdownify"></p>
+  <p >
+    <i>
+      <a href="https://github.com/jie0117">
+        My Github<br>
+      </a>
+      Built with<a href="https://gohugo.io/"> Hugo</a>
+    </i>
+  </p>
+</footer>
+
+    
+  </body>
+</html>
