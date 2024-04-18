@@ -2,66 +2,73 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://jie0117.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 02 Apr 2024 23:33:02 +0800</lastBuildDate>
-    <atom:link href="https://jie0117.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Apr 2024 22:14:33 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C/C&#43;&#43;  static 用法</title>
+      <link>http://localhost:1313/blog/c_static/</link>
+      <pubDate>Thu, 18 Apr 2024 22:14:33 +0800</pubDate>
+      <guid>http://localhost:1313/blog/c_static/</guid>
+      <description>static 是用來做什麼的？ 靜態區域變數(Static Local Variables) 當static修飾一個區域變數時,表示該變數只會在程式啟動時被初始化一次,而在程序運行期間,它會一直保持其值,直到程序結束。 與普通區域變數不同,靜態區域變數不會因函數調用結束而被銷毀,它在程式整個生命週期內都存在。 靜態局部變數可以用於實現簡單的記憶功能,例如記錄函數被調用的次數。&#xA;example 由以下範例可以知道count不會因為counter()結束而被銷毀，功能類似於全域變數，但是不能被其他.c檔案extern。&#xA;void counter() { static int count = 0; // count++; printf(&amp;#34;函数呼叫的次數: %d\n&amp;#34;, count); } int main() { counter(); // 函数呼叫的次數: 1 counter(); // 函数呼叫的次數: 2 counter(); // 函数呼叫的次數: 3 return 0; } 限制全域變數和函數的作用域 當static修飾一個全域變數或函數時,它的作用域被限制在該文件內。 這些靜態全域變數和函數無法在其他源文件中呼叫,只能在定義它們的檔案內部使用。 靜態全局變數可以防止不同文件之間的全域變數命名衝突。&#xA;example 由以下範例可以知道static有著類似於class中private的特性，只是禁止存取的範圍限制在其他檔案&#xA;// file1.c static int global_var = 0; // 靜態全域變數 static void static_func() { // 靜態函數 // 略... } // file2.c extern int global_var; // 錯誤,無法存取file1.</description>
+    </item>
     <item>
       <title>287. Find the Duplicate Number</title>
-      <link>https://jie0117.github.io/leetcode/l287/</link>
+      <link>http://localhost:1313/leetcode/l287/</link>
       <pubDate>Tue, 02 Apr 2024 23:33:02 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/l287/</guid>
+      <guid>http://localhost:1313/leetcode/l287/</guid>
       <description>題目敘述 找出陣列中&amp;quot;唯一&amp;quot;重複的值並且回傳，但是不能更改陣列內容&#xA;Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.&#xA;There is only one repeated number in nums, return this repeated number.&#xA;You must solve the problem without modifying the array nums and uses only constant extra space.&#xA;想法 暴力法，使用兩個指標進行n!次比對 O(N!) 龜兔賽跑演算法:Youtube解釋 O(N) 第一階段 一開始將兔子跟烏龜都設定於起點，兔子每次走2步，烏龜每次走1步，如果有環的存在(也就是重複的值)，那麼兔子跟烏龜最後必定會相遇。&#xA;第二階段 我們把烏龜放回起點，兔子現在以相同的速度（一次一步）移動，直到它們再次相遇。 它們相遇的點就是循環的入口，也是重複的數字。 注意：&#xA;範圍限制： 這個寫法要求數組中的元素值都在範圍[1, n]之間。這是因為對nums[hare]的數字的訪問將被用作下一步的索引，而該索引必須在數組範圍內。 必須有重複元素： 這個算法僅在存在一個重複數字時才有效。如果沒有重複的數字，則快速的兔子指針將永遠不會遇到慢速的龜指針。 可能出現無窮迴圈： 如果存在無限迴圈，則快速的兔子指針將永遠不會遇到慢速的龜指針，這可能導致算法無法終止。 code class Solution { public: int findDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int tortoise = nums[0]; int hare = nums[0]; // Move tortoise one step and hare two steps until they meet do { tortoise = nums[tortoise]; hare = nums[nums[hare]]; } while (tortoise !</description>
     </item>
     <item>
       <title>Git指令基礎</title>
-      <link>https://jie0117.github.io/blog/git/</link>
+      <link>http://localhost:1313/blog/git/</link>
       <pubDate>Thu, 14 Mar 2024 13:27:08 +0800</pubDate>
-      <guid>https://jie0117.github.io/blog/git/</guid>
+      <guid>http://localhost:1313/blog/git/</guid>
       <description>設定log裡面顯示的使用者以及email 若你有傳遞 &amp;ndash;global 參數，只需要做這工作一次，因為在此系統，不論 Git 做任何事都會採用此資訊。 若你想指定不同的名字或電子郵件給特定的專案，只需要在該專案資料夾內執行此命令，並確定未加上 &amp;ndash;global 參數&#xA;windows系統會預設儲存於C:\user\.gitconfig $ git config --global user.name &amp;#34;Jie Chen&amp;#34; $ git config --global user.email Jiechen@example.com 指定文字編輯器 如果你想要在 Windows 系統上使用 Notepad++ 做為編輯器，你可以執行下列步驟：&#xA;$ git config --global core.editor &amp;#34;&amp;#39;C:/Program Files (x86)/Notepad++/notepad++.exe&amp;#39; -multiInst -nosession&amp;#34; 在現有資料夾中初始化git 指令執行後會在當前資料夾新增一個.git隱藏檔案&#xA;$ git init 複製現有repository 若你想要取得現有 Git repository的複本，那你需要使用的命令是 git clone&#xA;$ git clone [url] [本機指定路徑(選填)] 檢查檔案狀態 檔案的狀況只會有以下四種，它們的狀態可能是「Unmodified」, 「Modified」, 「Staged」, 「Untracked」，下圖為檔案狀態的生命週期&#xA;Unmodified（未修改）：這表示文件的內容與上一次提交時相同，沒有任何更改。這是最基本的狀態，意味著文件沒有被更改。&#xA;Modified（已修改）：這表示文件的內容已經被修改，但是這些修改還沒有被暫存到Git的暫存區（使用git add命令）。這些修改只存在於工作資料夾中。&#xA;Staged（已暫存）：這表示文件的修改已經被暫存到Git的暫存區，準備提交到版本庫（使用git commit命令）。在這個狀態下，文件的當前版本與上一次提交時的版本不同，但是已經暫存並準備好提交。&#xA;Untracked（未跟蹤）：這表示文件是新建的，並且尚未被Git跟蹤。這些文件存在於工作資料夾中，但是還沒有被添加到Git的版本控制中。通常情況下，這些文件需要使用git add命令將其添加到暫存區，然後再進行提交。 $ git status $ git status -s //簡潔的status輸出 上述指令會告知目前的檔案狀況</description>
     </item>
     <item>
       <title>948. Bag of Tokens</title>
-      <link>https://jie0117.github.io/leetcode/l948/</link>
+      <link>http://localhost:1313/leetcode/l948/</link>
       <pubDate>Sat, 09 Mar 2024 17:46:52 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/l948/</guid>
+      <guid>http://localhost:1313/leetcode/l948/</guid>
       <description>題目敘述 由於原題目敘述不好理解，這裡用自己易理解的方式陳述。給予一個陣列，陣列包含購買一個積分(score)所需要的(能量)power，目標是求max_score。 我們可以做的事情有兩件&#xA;(1)使用1score換取陣列中所標示的power&#xA;token[i]=500 before after score 1 0 power 0 500 (2)使用power換取1score&#xA;token[i]=500 before after score 0 1 power 500 0 想法 先對陣列進行升序排序，簡化後續操作 使用雙指針head和tail分別指向最小和最大的代幣值 當前power足夠時,從head指針處獲取score, score加1 當前power不足時,如果score大於0,則從tail指針處出售1score, 獲取power 重複3和4,直到無法獲取或出售score為止 返回在此過程中獲得的最高分數 最終只需將整個陣列遍歷一次就可得出結果 code int bagOfTokensScore(vector&amp;lt;int&amp;gt;&amp;amp; tokens, int power) { sort(tokens.begin(), tokens.end()); int score = 0; int maxScore = 0; int head = 0; int tail = tokens.size() - 1; while (head &amp;lt;= tail) { if (power &amp;gt;= tokens[head]) { power -= tokens[head++]; score++; maxScore = max(maxScore, score); } else if (score &amp;gt; 0) { power += tokens[tail--]; score--; } else { break; } } return maxScore; } </description>
     </item>
     <item>
       <title>使用Hugo以及Github建立個人網頁 for Windows</title>
-      <link>https://jie0117.github.io/blog/built_website_with_hugo/</link>
+      <link>http://localhost:1313/blog/built_website_with_hugo/</link>
       <pubDate>Wed, 06 Mar 2024 23:04:19 +0800</pubDate>
-      <guid>https://jie0117.github.io/blog/built_website_with_hugo/</guid>
+      <guid>http://localhost:1313/blog/built_website_with_hugo/</guid>
       <description>事前準備 Hugo: https://github.com/gohugoio/hugo/releases (建議下載此版本，for Windows Intel or AMD 64位元CPU https://github.com/gohugoio/hugo/releases/download/v0.123.7/hugo_extended_0.123.7_windows-amd64.zip) Powershell: https://github.com/PowerShell/PowerShell/releases/tag/v7.4.1 (注意：Windows Powershell跟Powershell是不同的程式，也可以使用WSL) Git: https://git-scm.com/ Step 1： 建立hugo site //建立一個新的hugo專案 ./hugo new site quickstart //移動到quickstart資料夾內 cd quickstart //初始化git git init //下載ananke這個主題 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke //在hugo.toml這個檔案告知Hugo我要使用ananke主題 echo &amp;#34;theme = &amp;#39;ananke&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.toml //啟動Hugo的開發伺服器來查看網站 ./hugo server&#x9;Step 2： 新增內容 //在post這個資料夾建立markdown格式的內容，之後文章就是打在my-first-post.md裡面 hugo new content posts/my-first-post.md 接下來打開文字編輯軟體你會看到，前面的內容中的draft = true。 預設情況下，Hugo 在建立網站時不會建立草稿內容。&#xA;+++ title = &amp;#39;My First Post&amp;#39; date = 2024-01-14T07:07:07+01:00 draft = true +++ 儲存文件，然後啟動Hugo的開發伺服器來查看網站。 可以執行以下任一命令來包含草稿內容。</description>
     </item>
     <item>
       <title>x86,x64,AMD64,ARM64傻傻分不清？</title>
-      <link>https://jie0117.github.io/blog/isa/</link>
+      <link>http://localhost:1313/blog/isa/</link>
       <pubDate>Sun, 03 Mar 2024 17:55:56 +0800</pubDate>
-      <guid>https://jie0117.github.io/blog/isa/</guid>
+      <guid>http://localhost:1313/blog/isa/</guid>
       <description>前言 在我們日常使用電腦的時候，常常會遇到各種技術名詞和術語，有時候這些名詞看起來非常相似，卻代表著完全不同的概念。最近，當我試圖安裝 PowerShell 這一強大的工具時，我也陷入了這樣的困惑，讓我不知道要安裝哪個版本。&#xA;因此，本文將帶領大家深入探討這些名詞背後的差異，幫助我們更好地理解在安裝與使用軟體時應該注意的重要細節。讓我們一起來探索 x86、x64 和、AMD64以及ARM64之間的差異吧！&#xA;ARM64 ARM64是一種基於ARM架構的64位元處理器架構。ARM是一家總部位於英國的公司，它設計並授權製造各種處理器和相關的晶片設計，用於許多不同的應用，從智慧手機和平板電腦到單板電腦和伺服器。&#xA;ARM架構一直以來都在行動裝置市場上佔有主導地位，其低功耗和高效能的特點使得它在手機、平板電腦和物聯網設備等領域非常受歡迎。&#xA;ARM64是ARM架構的64位元版本，它支援更大的記憶體空間和更高的運算效能，使得它更適合處理複雜的計算任務和大規模的資料處理。許多現代的智慧手機和平板電腦都使用ARM64架構的處理器。&#xA;x86, x64, AMD64 x86指令集是一種最為廣泛使用的電腦處理器指令集架構之一。它最初由英特爾（Intel）所設計並推出，x86指令集起源於1978年的Intel 8086處理器，這個架構最初是16位元的。隨著時間的推移，x86架構逐漸發展成為32位元跟64位元架構。其中x86主要是指32位元指令集，而x64則是x86-64的簡稱，主要是指64位元指令集，至於AMD64其實跟x86-64是同一種東西，但是這就牽扯到Intel跟AMD在64位元指令集的戰爭了，大綱主要是x64於1999年由AMD設計，AMD首次公開64位元集以擴充給x86，稱為「AMD64」。其後也為Intel所採用，主要是Intel面子掛不住，必然不會承認使用了對手AMD的技術。如果Intel使用了AMD64這名字，等於在幫對手做廣告宣傳&#xA;總結： Intel及AMD採用&#xA;x64 = 32位元指令集 x86, AMD64 = 64位元指令集(可向下相容32位元) Nvidia、Qualcomm 、Samsung、Apple採用&#xA;ARM架構指令集 </description>
     </item>
     <item>
       <title>19.Remove Nth Node From End of List</title>
-      <link>https://jie0117.github.io/leetcode/leetcode_19/</link>
+      <link>http://localhost:1313/leetcode/leetcode_19/</link>
       <pubDate>Sun, 03 Mar 2024 16:15:55 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/leetcode_19/</guid>
+      <guid>http://localhost:1313/leetcode/leetcode_19/</guid>
       <description>題目敘述 Given the head of a linked list, remove the nth node from the end of the list and return its head.&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5]&#xA;Example 2: Input: head = [1], n = 1 Output: []&#xA;Example 3: Input: head = [1,2], n = 1 Output: [1]&#xA;限制條件 The number of nodes in the list is sz.</description>
     </item>
     <item>
       <title>6.Zigzag Conversion</title>
-      <link>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</link>
+      <link>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</link>
       <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</guid>
+      <guid>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</guid>
       <description>題目敘述 字串 &amp;quot;PAYPALISHIRING&amp;quot; 按照給定的行數以鋸齒形模式編寫，就像這樣： （為了更好的可讀性，你可以這樣閱讀）&#xA;P A H N A P L S I I G Y I R&#xA;之後依照行順序讀取: &amp;quot;PAHNAPLSIIGYIR&amp;quot;&#xA;函數總共會有兩個參數字串s跟整數numRows&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 3 Output: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;&#xA;Example 2:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 4 Output: &amp;ldquo;PINALSIGYAHRPI&amp;rdquo; Explanation: P I N A L S I G Y A H R P I&#xA;Example 3:&#xA;Input: s = &amp;ldquo;A&amp;rdquo;, numRows = 1 Output: &amp;ldquo;A&amp;rdquo;</description>
     </item>
     <item>
       <title>Server Proxy</title>
-      <link>https://jie0117.github.io/blog/server/</link>
+      <link>http://localhost:1313/blog/server/</link>
       <pubDate>Sat, 02 Mar 2024 11:37:36 +0800</pubDate>
-      <guid>https://jie0117.github.io/blog/server/</guid>
+      <guid>http://localhost:1313/blog/server/</guid>
       <description>正向代理 vs. 反向代理 當談到網路和網路服務時，&amp;ldquo;正向代理&amp;rdquo;（Forward Proxy）和&amp;quot;反向代理&amp;quot;（Reverse Proxy）是兩個常被提及的概念。這兩種代理伺服器（Proxy Server）都是在網路通訊中發揮重要作用的工具，但它們的功能和工作方式卻大不相同。對於一般使用者比較常接觸到的是正向代理(如：VPN)，而反向代理則是網站架設者會接觸到的。 接下來就讓我們來看看兩者之間的差異！&#xA;正向代理（Forward Proxy） 讓我們先從&amp;quot;正向代理&amp;quot;開始說起。正向代理通常是作為客戶端（client）與公共網路（Internet）之間的一個中間媒介。當用戶端設備（例如個人電腦、手機等）要求訪問網路上的資源時，它會先向正向代理伺服器發送請求。代理伺服器會代表客戶端向目標伺服器（例如網站、服務器等）發出請求，並將其回應返回給客戶端。簡單來說，正向代理&amp;quot;代表&amp;quot;客戶端去訪問網絡上的資源，並將收到的資源回傳給客戶端。&#xA;客戶端（Client Side） 發送一個請求（Request）到正向代理（Forward Proxy）。 正向代理 接收到這個請求後，會代表客戶端向目標伺服器（Target Server）發送另一個請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給正向代理。 正向代理 收到來自目標伺服器的回應後，再將這個回應轉發給最初的客戶端。 簡而言之，正向代理的流程是客戶端通過正向代理來訪問目標伺服器(也就是說可以對目標伺服器隱藏身分)，並將目標伺服器的回應返回給客戶端。這種代理方式通常用於控制、過濾或監視用戶端的request，也可以用於繞過某些網路限制(如：翻牆)。&#xA;反向代理（Reverse Proxy） 相反，&amp;ldquo;反向代理&amp;quot;則在伺服器端（server-side）扮演著類似的角色，但其工作方式則截然不同。當客戶端向伺服器發送請求時，這個請求會先傳送到反向代理伺服器。反向代理伺服器會根據特定的規則和配置，將這個請求轉發到適當的後端伺服器（如應用伺服器、資料庫伺服器等）。當後端伺服器返回結果時，反向代理伺服器再將這些結果轉發給最初的客戶端。簡而言之，反向代理伺服器&amp;quot;代表&amp;quot;伺服器來處理客戶端的請求，並將結果返回給客戶端。&#xA;客戶端（Client Side） 發送一個請求（Request）到反向代理（Reverse Proxy）。注意：以客戶端視角是不知道反向代理伺服器的存在。 反向代理 接收到這個請求後，會代表根據自定義規則向伺服器（Server）分配請求。 目標伺服器 收到請求後，處理並返回一個回應（Response）給反向代理。 反向代理 收到來自伺服器的回應後，再將這個回應轉發給最初的客戶端。 總體而言，反向代理在客戶端和目標伺服器之間充當了中間人的角色，但與正向代理不同的是，反向代理是代表伺服器而不是客戶端。它隱藏了後端伺服器的真實身份和結構，並可以提供負載平衡、SSL 加密、緩存等功能，以增強伺服器的效率、安全性和可擴展性。&#xA;結論 正向代理和反向代理，兩者都是代理伺服器，但在網路架構中扮演不同的角色和功能。總結這兩者的主要區別和功能：&#xA;正向代理（Forward Proxy）：&#xA;位於客戶端與網絡之間：客戶端在發送請求時，不直接連接到目標伺服器，而是透過正向代理。 隱藏客戶端身份：正向代理伺服器可以隱藏客戶端的真實IP地址和其他身份資訊。 過濾和監控：可用於過濾內容、提供安全性、加速訪問速度等功能。 代理客戶端訪問外部資源：通常用於內部網絡中，客戶端訪問外部資源時，正向代理會代表客戶端向外部伺服器發送請求。 反向代理（Reverse Proxy）：&#xA;位於目標伺服器與網絡之間：客戶端發送請求時，先連接到反向代理，再由反向代理轉發請求到目標伺服器。 隱藏伺服器身份：反向代理隱藏了目標伺服器的真實IP地址和結構，保護伺服器的安全性。 負載平衡：可以分發流量到多個後端伺服器，以提高性能和可擴展性。 SSL 終端：負責處理 SSL 加密和解密，減輕伺服器的負擔。 緩存：可以緩存靜態資源，提高資源的訪問速度和效率。 </description>
     </item>
   </channel>

@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leetcodes on </title>
-    <link>https://jie0117.github.io/leetcode/</link>
+    <link>http://localhost:1313/leetcode/</link>
     <description>Recent content in Leetcodes on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Tue, 02 Apr 2024 23:33:02 +0800</lastBuildDate>
-    <atom:link href="https://jie0117.github.io/leetcode/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/leetcode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>287. Find the Duplicate Number</title>
-      <link>https://jie0117.github.io/leetcode/l287/</link>
+      <link>http://localhost:1313/leetcode/l287/</link>
       <pubDate>Tue, 02 Apr 2024 23:33:02 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/l287/</guid>
+      <guid>http://localhost:1313/leetcode/l287/</guid>
       <description>題目敘述 找出陣列中&amp;quot;唯一&amp;quot;重複的值並且回傳，但是不能更改陣列內容&#xA;Given an array of integers nums containing n + 1 integers where each integer is in the range [1, n] inclusive.&#xA;There is only one repeated number in nums, return this repeated number.&#xA;You must solve the problem without modifying the array nums and uses only constant extra space.&#xA;想法 暴力法，使用兩個指標進行n!次比對 O(N!) 龜兔賽跑演算法:Youtube解釋 O(N) 第一階段 一開始將兔子跟烏龜都設定於起點，兔子每次走2步，烏龜每次走1步，如果有環的存在(也就是重複的值)，那麼兔子跟烏龜最後必定會相遇。&#xA;第二階段 我們把烏龜放回起點，兔子現在以相同的速度（一次一步）移動，直到它們再次相遇。 它們相遇的點就是循環的入口，也是重複的數字。 注意：&#xA;範圍限制： 這個寫法要求數組中的元素值都在範圍[1, n]之間。這是因為對nums[hare]的數字的訪問將被用作下一步的索引，而該索引必須在數組範圍內。 必須有重複元素： 這個算法僅在存在一個重複數字時才有效。如果沒有重複的數字，則快速的兔子指針將永遠不會遇到慢速的龜指針。 可能出現無窮迴圈： 如果存在無限迴圈，則快速的兔子指針將永遠不會遇到慢速的龜指針，這可能導致算法無法終止。 code class Solution { public: int findDuplicate(vector&amp;lt;int&amp;gt;&amp;amp; nums) { int tortoise = nums[0]; int hare = nums[0]; // Move tortoise one step and hare two steps until they meet do { tortoise = nums[tortoise]; hare = nums[nums[hare]]; } while (tortoise !</description>
     </item>
     <item>
       <title>948. Bag of Tokens</title>
-      <link>https://jie0117.github.io/leetcode/l948/</link>
+      <link>http://localhost:1313/leetcode/l948/</link>
       <pubDate>Sat, 09 Mar 2024 17:46:52 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/l948/</guid>
+      <guid>http://localhost:1313/leetcode/l948/</guid>
       <description>題目敘述 由於原題目敘述不好理解，這裡用自己易理解的方式陳述。給予一個陣列，陣列包含購買一個積分(score)所需要的(能量)power，目標是求max_score。 我們可以做的事情有兩件&#xA;(1)使用1score換取陣列中所標示的power&#xA;token[i]=500 before after score 1 0 power 0 500 (2)使用power換取1score&#xA;token[i]=500 before after score 0 1 power 500 0 想法 先對陣列進行升序排序，簡化後續操作 使用雙指針head和tail分別指向最小和最大的代幣值 當前power足夠時,從head指針處獲取score, score加1 當前power不足時,如果score大於0,則從tail指針處出售1score, 獲取power 重複3和4,直到無法獲取或出售score為止 返回在此過程中獲得的最高分數 最終只需將整個陣列遍歷一次就可得出結果 code int bagOfTokensScore(vector&amp;lt;int&amp;gt;&amp;amp; tokens, int power) { sort(tokens.begin(), tokens.end()); int score = 0; int maxScore = 0; int head = 0; int tail = tokens.size() - 1; while (head &amp;lt;= tail) { if (power &amp;gt;= tokens[head]) { power -= tokens[head++]; score++; maxScore = max(maxScore, score); } else if (score &amp;gt; 0) { power += tokens[tail--]; score--; } else { break; } } return maxScore; } </description>
     </item>
     <item>
       <title>19.Remove Nth Node From End of List</title>
-      <link>https://jie0117.github.io/leetcode/leetcode_19/</link>
+      <link>http://localhost:1313/leetcode/leetcode_19/</link>
       <pubDate>Sun, 03 Mar 2024 16:15:55 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/leetcode_19/</guid>
+      <guid>http://localhost:1313/leetcode/leetcode_19/</guid>
       <description>題目敘述 Given the head of a linked list, remove the nth node from the end of the list and return its head.&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1: Input: head = [1,2,3,4,5], n = 2 Output: [1,2,3,5]&#xA;Example 2: Input: head = [1], n = 1 Output: []&#xA;Example 3: Input: head = [1,2], n = 1 Output: [1]&#xA;限制條件 The number of nodes in the list is sz.</description>
     </item>
     <item>
       <title>6.Zigzag Conversion</title>
-      <link>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</link>
+      <link>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</link>
       <pubDate>Sat, 02 Mar 2024 17:05:55 +0800</pubDate>
-      <guid>https://jie0117.github.io/leetcode/leetcode_6_zigzag_conversion/</guid>
+      <guid>http://localhost:1313/leetcode/leetcode_6_zigzag_conversion/</guid>
       <description>題目敘述 字串 &amp;quot;PAYPALISHIRING&amp;quot; 按照給定的行數以鋸齒形模式編寫，就像這樣： （為了更好的可讀性，你可以這樣閱讀）&#xA;P A H N A P L S I I G Y I R&#xA;之後依照行順序讀取: &amp;quot;PAHNAPLSIIGYIR&amp;quot;&#xA;函數總共會有兩個參數字串s跟整數numRows&#xA;string convert(string s, int numRows);&#xA;測試資料 Example 1:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 3 Output: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;&#xA;Example 2:&#xA;Input: s = &amp;ldquo;PAYPALISHIRING&amp;rdquo;, numRows = 4 Output: &amp;ldquo;PINALSIGYAHRPI&amp;rdquo; Explanation: P I N A L S I G Y A H R P I&#xA;Example 3:&#xA;Input: s = &amp;ldquo;A&amp;rdquo;, numRows = 1 Output: &amp;ldquo;A&amp;rdquo;</description>
     </item>
   </channel>
